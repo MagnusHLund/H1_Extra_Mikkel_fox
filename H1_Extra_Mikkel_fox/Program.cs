@@ -17,14 +17,22 @@
             // Creates a new variable to keep track of the longest word length
             int longestWord = 0;
 
-            // Creates a new variable to keep track of the output
-            string outputWords = "";
-
-            int currentWordLength;
-
-            for (int i = 0; i < length; i++)
+            // Does a foreach which figures out the longest word length
+            foreach (string word in inputList)
             {
+                if(word.Length > longestWord)
+                {
+                    longestWord = word.Length;
+                }
+            }
 
+            // does an identical foreach, however this one takes those with the longest character length, and writes out the word which are that length
+            foreach (string word in inputList)
+            {
+                if(word.Length == longestWord)
+                {
+                    Console.WriteLine(word);
+                }
             }
         }
     }
